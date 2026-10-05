@@ -4,13 +4,18 @@ require("dotenv").config();
 
 module.exports = {
   mode: "development",
+
   entry: "./src/App.jsx",
+
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "main.js",
     publicPath: "/",
+    clean: false,
   },
+
   devtool: "source-map",
+
   plugins: [
     new webpack.EnvironmentPlugin({
       NODE_ENV: "development",
@@ -21,6 +26,7 @@ module.exports = {
       REACT_APP_AUTH0_AUDIENCE: "",
     }),
   ],
+
   module: {
     rules: [
       {
@@ -33,21 +39,36 @@ module.exports = {
           },
         },
       },
+
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
       },
+
+      /* IMAGE FILES */
+      {
+        test: /\.(png|jpe?g|gif|webp|svg)$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "assets/[name][ext]",
+        },
+      },
     ],
   },
+
   resolve: {
     extensions: [".js", ".jsx"],
   },
+
   devServer: {
     static: {
       directory: path.join(__dirname, "dist"),
     },
+
     compress: true,
+
     historyApiFallback: true,
+
     port: 3000,
   },
 };

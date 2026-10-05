@@ -1,0 +1,1009 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap");
+
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #fffafc;
+}
+
+
+/* =========================
+   FIXED BACKGROUND
+========================= */
+
+.home-fixed-background {
+  position: fixed;
+
+  inset: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  z-index: 0;
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  pointer-events: none;
+}
+
+
+/* FADED PEARL OVERLAY */
+
+.home-fixed-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(255, 253, 251, 0.72) 0%,
+      rgba(255, 250, 252, 0.67) 45%,
+      rgba(255, 244, 249, 0.62) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   HOME
+========================= */
+
+.home {
+  --pink: #e6007e;
+  --pink-light: #ff4da6;
+  --black: #080808;
+  --soft-black: #181618;
+  --pearl: #f8f5f2;
+  --gray: #716a6e;
+
+  position: relative;
+
+  z-index: 2;
+
+  min-height: 100vh;
+
+  color: var(--soft-black);
+
+  font-family: "Montserrat", sans-serif;
+}
+
+
+/* =========================
+   EYEBROW
+========================= */
+
+.home-eyebrow {
+  margin: 0 0 22px;
+
+  color: var(--pink);
+
+  font-size: 0.62rem;
+  font-weight: 500;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.home-hero {
+  min-height: calc(100vh - 86px);
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+
+  padding:
+    100px
+    max(6%, calc((100vw - 1400px) / 2));
+
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 850px;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+.hero-title {
+  margin: 0;
+
+  color: var(--black);
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(4.8rem, 8vw, 8.8rem);
+  font-weight: 400;
+
+  line-height: 0.84;
+
+  letter-spacing: -4px;
+}
+
+.hero-title span {
+  display: block;
+
+  margin-left: 11%;
+
+  color: var(--pink);
+
+  font-style: italic;
+}
+
+.hero-description {
+  max-width: 580px;
+
+  margin: 45px 0 0 11%;
+
+  color: #494144;
+
+  font-size: 0.88rem;
+  font-weight: 400;
+
+  line-height: 1.95;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 32px;
+
+  margin: 40px 0 0 11%;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.home-primary-button {
+  display: inline-block;
+
+  padding: 17px 29px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff3ca0,
+      var(--pink),
+      #c9006e
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+
+  box-shadow:
+    0 12px 30px rgba(230, 0, 126, 0.25);
+
+  text-decoration: none;
+  text-transform: uppercase;
+
+  font-size: 0.61rem;
+  font-weight: 500;
+
+  letter-spacing: 2px;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.home-primary-button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 18px 38px rgba(230, 0, 126, 0.35);
+}
+
+.home-text-link {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 13px;
+
+  color: var(--black);
+
+  text-decoration: none;
+  text-transform: uppercase;
+
+  font-size: 0.6rem;
+  font-weight: 500;
+
+  letter-spacing: 2px;
+}
+
+.home-text-link span {
+  color: var(--pink);
+
+  font-size: 1rem;
+
+  transition: transform 0.3s ease;
+}
+
+.home-text-link:hover span {
+  transform: translateX(5px);
+}
+
+
+/* =========================
+   SHARED HEADINGS
+========================= */
+
+.home-intro h2,
+.services-header h2,
+.home-philosophy h2,
+.experience-heading h2,
+.professional-content h2,
+.home-cta h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(3.3rem, 6vw, 5.8rem);
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  letter-spacing: -2px;
+}
+
+.home-intro h2 em,
+.home-philosophy h2 em,
+.experience-heading h2 em,
+.professional-content h2 em,
+.home-cta h2 em {
+  color: var(--pink);
+
+  font-weight: 400;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.home-intro {
+  padding: 145px 6%;
+
+  background: rgba(255, 253, 251, 0.72);
+
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+
+  text-align: center;
+}
+
+.intro-inner {
+  max-width: 850px;
+
+  margin: auto;
+}
+
+.intro-description {
+  max-width: 680px;
+
+  margin: 34px auto 0;
+
+  color: var(--gray);
+
+  font-size: 0.86rem;
+  font-weight: 300;
+
+  line-height: 2;
+}
+
+.intro-secondary {
+  margin-top: 15px;
+}
+
+.intro-divider {
+  max-width: 350px;
+
+  margin: 48px auto 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+}
+
+.intro-divider span {
+  flex: 1;
+
+  height: 1px;
+
+  background: #dfcfd7;
+}
+
+.intro-divider div {
+  color: var(--pink);
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-style: italic;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.home-services {
+  padding:
+    120px
+    max(6%, calc((100vw - 1400px) / 2));
+
+  background: rgba(248, 243, 245, 0.76);
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.services-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  gap: 50px;
+
+  margin-bottom: 70px;
+}
+
+.services-header-text {
+  max-width: 410px;
+
+  margin: 0;
+
+  color: var(--gray);
+
+  font-size: 0.8rem;
+
+  line-height: 1.9;
+}
+
+.services-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 24px;
+}
+
+
+/* =========================
+   SERVICE CARDS
+========================= */
+
+.home-service-card {
+  min-height: 470px;
+
+  padding: 32px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  position: relative;
+
+  overflow: hidden;
+
+  color: var(--soft-black);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.94),
+      rgba(255, 250, 252, 0.88)
+    );
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.85);
+
+  border-radius: 28px;
+
+  box-shadow:
+    0 15px 45px rgba(65, 40, 52, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+  text-decoration: none;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease,
+    border-color 0.45s ease,
+    background 0.45s ease;
+}
+
+
+/* GRADIENT LAYER */
+
+.home-service-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+
+  border-radius: inherit;
+
+  background:
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(255, 77, 166, 0.28),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.98) 0%,
+      rgba(255, 235, 245, 0.97) 35%,
+      rgba(255, 189, 221, 0.9) 70%,
+      rgba(230, 0, 126, 0.72) 120%
+    );
+
+  opacity: 0;
+
+  transition: opacity 0.5s ease;
+}
+
+
+/* KEEP CARD CONTENT ABOVE GRADIENT */
+
+.home-service-card > * {
+  position: relative;
+
+  z-index: 1;
+}
+
+
+/* CARD HOVER */
+
+.home-service-card:hover {
+  transform:
+    translateY(-10px)
+    scale(1.012);
+
+  border-color:
+    rgba(230, 0, 126, 0.18);
+
+  box-shadow:
+    0 28px 60px rgba(75, 38, 58, 0.15),
+    0 10px 30px rgba(230, 0, 126, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.home-service-card:hover::before {
+  opacity: 1;
+}
+
+
+/* FEATURED CENTER CARD */
+
+.service-featured {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 246, 250, 0.96),
+      rgba(255, 234, 244, 0.92)
+    );
+}
+
+
+/* CARD TOP */
+
+.service-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.service-number {
+  color: #aa9ba2;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-style: italic;
+
+  transition:
+    color 0.35s ease,
+    transform 0.35s ease;
+}
+
+.service-arrow {
+  color: var(--pink);
+
+  font-size: 1.3rem;
+
+  transition:
+    transform 0.35s ease,
+    color 0.35s ease;
+}
+
+.home-service-card:hover .service-arrow {
+  transform:
+    translate(4px, -4px)
+    rotate(5deg);
+}
+
+.home-service-card:hover .service-number {
+  color: var(--pink);
+
+  transform: translateX(2px);
+}
+
+
+/* CARD CONTENT */
+
+.service-category {
+  margin: 0 0 13px;
+
+  color: var(--pink);
+
+  font-size: 0.56rem;
+  font-weight: 500;
+
+  letter-spacing: 3px;
+}
+
+.service-card-content h3 {
+  margin: 0 0 22px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(2.8rem, 4vw, 4rem);
+  font-weight: 400;
+
+  transition:
+    transform 0.4s ease;
+}
+
+.home-service-card:hover .service-card-content h3 {
+  transform: translateX(4px);
+}
+
+.service-description {
+  max-width: 330px;
+
+  color: var(--gray);
+
+  font-size: 0.77rem;
+
+  line-height: 1.9;
+
+  transition: color 0.35s ease;
+}
+
+.home-service-card:hover .service-description {
+  color: #55474e;
+}
+
+.service-discover {
+  display: inline-block;
+
+  margin-top: 35px;
+
+  padding-bottom: 5px;
+
+  border-bottom:
+    1px solid
+    var(--pink);
+
+  color: var(--black);
+
+  font-size: 0.58rem;
+  font-weight: 500;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+
+  transition:
+    letter-spacing 0.35s ease,
+    color 0.35s ease;
+}
+
+.home-service-card:hover .service-discover {
+  color: #9d0057;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================
+   PHILOSOPHY
+========================= */
+
+.home-philosophy {
+  min-height: 680px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 130px 6%;
+
+  background: rgba(255, 253, 251, 0.4);
+
+  text-align: center;
+}
+
+.philosophy-content {
+  max-width: 850px;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+.home-philosophy h2 em {
+  display: block;
+}
+
+.home-philosophy p:not(.home-eyebrow) {
+  max-width: 650px;
+
+  margin: 35px auto;
+
+  color: #554e52;
+
+  font-size: 0.85rem;
+
+  line-height: 2;
+}
+
+.dark-link {
+  justify-content: center;
+}
+
+.philosophy-decoration {
+  position: absolute;
+
+  color: rgba(230, 0, 126, 0.06);
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: min(55vw, 650px);
+
+  font-style: italic;
+
+  line-height: 1;
+
+  user-select: none;
+}
+
+
+/* =========================
+   EXPERIENCE
+========================= */
+
+.home-experience {
+  padding:
+    125px
+    max(6%, calc((100vw - 1400px) / 2));
+
+  background: rgba(255, 248, 251, 0.74);
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.experience-heading {
+  max-width: 750px;
+
+  margin-bottom: 75px;
+}
+
+.experience-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  border-top: 1px solid #ddcfd6;
+}
+
+.experience-item {
+  padding:
+    40px
+    45px
+    20px
+    0;
+}
+
+.experience-item + .experience-item {
+  padding-left: 45px;
+
+  border-left: 1px solid #ddcfd6;
+}
+
+.experience-item span {
+  color: var(--pink);
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-style: italic;
+}
+
+.experience-item h3 {
+  margin: 22px 0 15px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 2.1rem;
+  font-weight: 400;
+}
+
+.experience-item p {
+  color: var(--gray);
+
+  font-size: 0.76rem;
+
+  line-height: 1.9;
+}
+
+
+/* =========================
+   PROFESSIONAL
+========================= */
+
+.professional-teaser {
+  padding:
+    130px
+    max(6%, calc((100vw - 1400px) / 2));
+
+  background: rgba(8, 8, 8, 0.94);
+
+  color: white;
+}
+
+.professional-inner {
+  display: grid;
+
+  grid-template-columns: 0.65fr 1.35fr;
+
+  align-items: center;
+
+  gap: 80px;
+}
+
+.professional-number {
+  color: rgba(255, 255, 255, 0.08);
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(5rem, 10vw, 10rem);
+
+  font-style: italic;
+
+  white-space: nowrap;
+}
+
+.professional-content {
+  max-width: 680px;
+}
+
+.professional-content h2 {
+  color: var(--pearl);
+}
+
+.professional-content h2 em {
+  display: block;
+}
+
+.professional-content > p:not(.home-eyebrow) {
+  max-width: 570px;
+
+  margin: 32px 0;
+
+  color: #bbb3b7;
+
+  font-size: 0.82rem;
+
+  line-height: 2;
+}
+
+.professional-link {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 13px;
+
+  padding-bottom: 7px;
+
+  color: var(--pearl);
+
+  border-bottom: 1px solid var(--pink);
+
+  text-decoration: none;
+  text-transform: uppercase;
+
+  font-size: 0.58rem;
+  font-weight: 500;
+
+  letter-spacing: 2px;
+}
+
+.professional-link span {
+  color: var(--pink);
+}
+
+
+/* =========================
+   FINAL CTA
+========================= */
+
+.home-cta {
+  min-height: 620px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 120px 6%;
+
+  background: rgba(255, 250, 252, 0.58);
+
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 850px;
+}
+
+.home-cta h2 em {
+  display: block;
+}
+
+.home-cta .cta-content > p:not(.home-eyebrow) {
+  margin: 30px 0 35px;
+
+  color: var(--gray);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 950px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-item,
+  .experience-item + .experience-item {
+    padding: 35px 0;
+
+    border-left: 0;
+
+    border-bottom: 1px solid #ddcfd6;
+  }
+
+  .professional-inner {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .home-fixed-background {
+    background-position: 58% center;
+  }
+
+  .home-fixed-overlay {
+    background: rgba(255, 250, 252, 0.7);
+  }
+
+  .home-hero {
+    min-height: calc(100vh - 76px);
+
+    padding: 75px 7%;
+  }
+
+  .hero-title {
+    font-size: clamp(3.8rem, 19vw, 5.5rem);
+
+    line-height: 0.88;
+
+    letter-spacing: -2px;
+  }
+
+  .hero-title span {
+    margin-left: 0;
+  }
+
+  .hero-description {
+    margin-left: 0;
+  }
+
+  .hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+
+    margin-left: 0;
+  }
+
+  .home-intro,
+  .home-services,
+  .home-philosophy,
+  .home-experience,
+  .professional-teaser,
+  .home-cta {
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+
+  .home-intro h2,
+  .services-header h2,
+  .home-philosophy h2,
+  .experience-heading h2,
+  .professional-content h2,
+  .home-cta h2 {
+    font-size: clamp(3rem, 15vw, 4.5rem);
+  }
+
+  .home-service-card {
+    min-height: 360px;
+
+    border-radius: 22px;
+  }
+}
